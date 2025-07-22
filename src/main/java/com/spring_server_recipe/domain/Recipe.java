@@ -13,7 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "recipe")
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,12 +20,19 @@ public class Recipe {
     @Column(name = "name")
     private String name;
 
+    @ManyToOne(targetEntity = Author.class, fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id")
+    private Author author;
+
     @Column(name = "description")
     private String description;
 
     @ManyToOne(targetEntity = Difficulty.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "difficulty_id")
     private Difficulty difficulty;
+
+    @Column(name = "rating")
+    private int rating;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<Ingredient> ingredients;

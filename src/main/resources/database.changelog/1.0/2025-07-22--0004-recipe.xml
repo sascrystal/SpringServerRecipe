@@ -38,10 +38,11 @@
                     type="numeric(19,0)">
                 <constraints nullable="false"
                              foreignKeyName="fk_recipe_author"
-                             references="author(id)"/>
+                             references="author(id)"
+                deleteCascade="true"/>
             </column>
 
-            <column name="like"
+            <column name="rating"
                     type="numeric(19,0)">
                 <constraints nullable="false"/>
             </column>

@@ -27,7 +27,8 @@
             type="numeric(19,0)">
                 <constraints nullable="false"
                              foreignKeyName="fk_ste_recipe"
-                             references="recipe(id)"/>
+                             references="recipe(id)"
+                             deleteCascade="true"/>
             </column>
 
         </createTable>

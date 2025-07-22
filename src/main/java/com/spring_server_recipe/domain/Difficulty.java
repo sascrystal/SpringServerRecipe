@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "difficulty")
 public class Difficulty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
