@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog-ext.xsd">
+
+    <include file="/database.changelog/1.0/2025-07-22--0001-author.xml"/>
+    <include file="/database.changelog/1.0/2025-07-22--0002-difficulty.xml"/>
+    <include file="/database.changelog/1.0/2025-07-22--0004-recipe.xml"/>
+    <include file="/database.changelog/1.0/2025-07-22--0003-step.xml"/>
+    <include file="/database.changelog/1.0/2025-07-22--0005-ingredient.xml"/>
+
+    <include file="/database.changelog/data/2025-07-22--0001-difficulty-data.xml"/>
+    <include file="/database.changelog/data/2025-07-22--0002-author-data.xml"/>
+    <include file="/database.changelog/data/2025-07-22--0003-recipe-data.xml"/>
+    <include file="/database.changelog/data/2025-07-22--0004-step-data.xml"/>
+    <include file="/database.changelog/data/2025-07-22--0005-ingredient-data.xml"/>
+</databaseChangeLog>
