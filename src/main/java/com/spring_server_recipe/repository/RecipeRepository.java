@@ -10,8 +10,9 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
     List<Recipe> findAllByAuthorId(int authorId);
     List<Recipe> findAllByAuthorIdAndDifficultyId(int authorId, int difficultyId);
     List<Recipe> findAllByDifficultyId(int difficultyId);
-    List<Recipe> findByRatingGreaterThan(int rating);
+    List<Recipe> findAllByRatingGreaterThan(int rating);
     Recipe findById(int id);
-
-
+    List<Recipe> findByName(String name);
+    List<Recipe> findAllByAuthorName(String name);
+    List<Recipe> findAllByDifficultyName(String name);
 }
