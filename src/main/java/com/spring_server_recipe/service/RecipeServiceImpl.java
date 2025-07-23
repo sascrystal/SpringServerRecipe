@@ -106,7 +106,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe CreateRecipe(String authorName, String difficultyName, String recipeName) {
+    public Recipe createRecipe(String authorName, String difficultyName, String recipeName) {
         Author author = authorRepository.findByName(authorName);
         if (author == null) {
             Author newAuthor = Author.builder().name(authorName).build();
@@ -121,7 +121,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe updateRecipe(int id, String authorName, String difficultyName, String name, List<Step> steps, List<Ingredient> ingredients) {
+    public Recipe updateRecipe(int id, String authorName, String difficultyName, String name) {
         Author author = authorRepository.findByName(authorName);
         if (author == null) {
             Author newAuthor = Author.builder().name(authorName).build();
@@ -133,14 +133,12 @@ public class RecipeServiceImpl implements RecipeService {
         }
         Recipe recipe = recipeRepository.findById(id);
         if (recipe == null) {
-            return Recipe.builder().author(author).difficulty(difficulty).steps(steps).ingredients(ingredients).rating(0).build();
+            return Recipe.builder().author(author).difficulty(difficulty).rating(0).build();
         } else {
             return Recipe.builder()
                     .id(recipe.getId())
                     .name(name)
                     .author(author)
-                    .steps(steps)
-                    .ingredients(ingredients)
                     .difficulty(difficulty)
                     .rating(recipe.getRating()).build();
         }

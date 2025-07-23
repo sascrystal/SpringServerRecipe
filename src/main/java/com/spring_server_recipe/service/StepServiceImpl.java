@@ -25,17 +25,12 @@ public class StepServiceImpl implements StepService {
     }
 
     @Override
-    public Step updateStepByStepId(int id,String description, int recipeId) {
-        Recipe recipe = recipeRepository.findById(id);
-        if (recipe == null) {
+    public Step updateStepByStepId(int id,String description) {
+        Step step = stepRepository.findById(id);
+        if (step == null) {
             return null;
         }
-        Step step = stepRepository.findById(recipeId);
-        if (step == null) {
-            return insertStepByRecipeId(description, recipeId);
-        }
-        Step newStep = Step.builder().id(id).description(description).recipe(recipe).build();
-
+        Step newStep = Step.builder().id(id).description(description).recipe(step.getRecipe()).build();
         return stepRepository.save(newStep);
     }
 

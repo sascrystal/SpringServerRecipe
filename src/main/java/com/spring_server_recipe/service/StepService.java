@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface StepService {
     Step insertStepByRecipeId(String description,int id);
-    Step updateStepByStepId(int id,String description, int recipeId);
+    Step updateStepByStepId(int id,String description);
     void deleteStepByStepId(int id);
     List<Step> getAllStepsByRecipeId(int id);
 

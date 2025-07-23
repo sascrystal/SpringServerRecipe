@@ -23,8 +23,8 @@ public interface RecipeService {
     List<Recipe> getRecipesByDifficultyName(String name);
     List<Recipe> getBestRecipeByDifficultyIdAndAuthorId(int difficultyId, int authorId);
     List<Recipe> getRecipeByDifficultyIdAndAuthorId(int difficultyId, int authorId);
-    Recipe CreateRecipe(String authorName, String  difficultyName, String recipe);
-    Recipe updateRecipe(int id, String authorName, String difficultyName, String name, List<Step> steps, List<Ingredient> ingredients);
+    Recipe createRecipe(String authorName, String  difficultyName, String recipe);
+    Recipe updateRecipe(int id, String authorName, String difficultyName, String name);
     Recipe likeRecipeById(int id);
     void deleteRecipe(int id);
 

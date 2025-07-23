@@ -15,8 +15,10 @@ import java.util.List;
 @Builder
 public class RecipeDto {
     private int id;
+    private int rating;
     private String name;
     private String description;
+
     private AuthorDto authorDto;
     private DifficultyDto difficultyDto;
     private List<IngredientDto> ingredientsDto;
@@ -29,6 +31,7 @@ public class RecipeDto {
         DifficultyDto difficultyDto = DifficultyDto.toDto(recipe.getDifficulty());
         return new RecipeDto(
                 recipe.getId(),
+                recipe.getRating(),
                 recipe.getName(),
                 recipe.getDescription(),
                 authorDto,
