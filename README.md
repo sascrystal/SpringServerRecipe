@@ -26,3 +26,14 @@ Maven: для сборки и управления зависимостями.
 ##### /author/{id} - выдача автора по id.
 ##### /author/findByName @RequestParam name - Выдача автора по имени.
 
+#### **Delete запросы**
+
+##### /author/{id} - удаление автора по id.
+
+#### **Post запросы**
+
+##### /author @RequestParam String name - добавления нового автора
+
+#### **Put запросы**
+##### /author/{id} @RequestParam String name - обновление автора
+
